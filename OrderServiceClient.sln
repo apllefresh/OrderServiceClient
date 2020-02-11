@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.29609.76
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{94206241-874F-4EEB-BA06-8C00080DF269}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Foms", "Foms", "{AC383407-826F-4A95-BB05-5D80479D0482}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Components", "Components", "{AC383407-826F-4A95-BB05-5D80479D0482}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MainForm", "MainForm\MainForm.csproj", "{CE90B824-31A2-4548-B779-27A77B238339}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderServiceClient.UI", "Components\OrderServiceClient.UI\OrderServiceClient.UI.csproj", "{CE90B824-31A2-4548-B779-27A77B238339}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BusinessLogic", "BusinessLogic", "{EAA32385-96E9-4B3F-A59E-88331C08A00A}"
 EndProject

@@ -1,11 +1,11 @@
-﻿using MainForm.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using OrderServiceClient.UI.Models;
 
-namespace MainForm.Hub
+namespace OrderServiceClient.UI.Hub
 {
     public class RouteViewModel : INotifyPropertyChanged
     {

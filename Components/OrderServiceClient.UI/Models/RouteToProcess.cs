@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace MainForm.Models
+namespace OrderServiceClient.UI.Models
 {
     public class RouteToProcess: INotifyPropertyChanged
     {

@@ -12,14 +12,11 @@ namespace OrderServiceClient.MessageBroker.RabbitMq.Services
     {
         private readonly ConnectionFactory _connectionFactory;
         private readonly IConnection _connection;
-        private readonly ILogger<RabbitMqMessageBrokerService> _logger;
         private readonly Dictionary<ChanelType, IModel> _channels;
 
-        public RabbitMqMessageBrokerService(ILogger<RabbitMqMessageBrokerService> logger)
+        public RabbitMqMessageBrokerService()
         {
-            _logger = logger;
-            
-            _connectionFactory = new ConnectionFactory() { HostName = "rabbitmq" };
+            _connectionFactory = new ConnectionFactory() { HostName = "localhost" };
             _connection = _connectionFactory.CreateConnection();
             _channels = new Dictionary<ChanelType, IModel>
             {
@@ -29,7 +26,7 @@ namespace OrderServiceClient.MessageBroker.RabbitMq.Services
 
         public void SubscribeForNewRoutes(Action action)
         {
-            _logger.LogDebug("Open connection");
+            //_logger.LogDebug("Open connection");
             try
             {
                 var channel = _channels[ChanelType.GetNewRoutes];
@@ -58,14 +55,14 @@ namespace OrderServiceClient.MessageBroker.RabbitMq.Services
             }
             catch (RabbitMQ.Client.Exceptions.BrokerUnreachableException ex)
             {
-                _logger.LogError($"Failed connect to RabbitMQ server");
-                _logger.LogError(ex.Message);
+                //_logger.LogError($"Failed connect to RabbitMQ server");
+                //_logger.LogError(ex.Message);
                 throw;
             }
             catch (Exception ex)
             {
-                _logger.LogError($"Failed to send notification");
-                _logger.LogError(ex.Message);
+                //_logger.LogError($"Failed to send notification");
+                //_logger.LogError(ex.Message);
                 throw;
             }
         }

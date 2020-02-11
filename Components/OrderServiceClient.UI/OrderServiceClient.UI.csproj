@@ -7,7 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="DI" />
+    <PackageReference Include="Autofac" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\MessageBroker\OrderServiceClient.MessageBroker.DI\OrderServiceClient.MessageBroker.DI.csproj" />
   </ItemGroup>
 
 </Project>

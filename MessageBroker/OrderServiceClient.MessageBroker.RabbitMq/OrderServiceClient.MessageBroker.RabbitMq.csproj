@@ -5,7 +5,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\Components\OrderServiceClient.UI\OrderServiceClient.UI.csproj" />
       <ProjectReference Include="..\OrderServiceClient.MessageBroker.Contract\OrderServiceClient.MessageBroker.Contract.csproj" />
     </ItemGroup>
 

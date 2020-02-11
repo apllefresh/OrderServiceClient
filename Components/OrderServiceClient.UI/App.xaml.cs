@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using OrderServiceClient.UI.DI;
 
 namespace OrderServiceClient.UI
 {
@@ -9,7 +10,7 @@ namespace OrderServiceClient.UI
     {
         protected override void OnStartup(StartupEventArgs e)
         {
-            
+            UiServiceRegistration.RegisterServices();
         }
     }
 }

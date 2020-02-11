@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using OrderServiceClient.MessageBroker.Contract.Services;
 
 namespace OrderServiceClient.UI.Forms
 {
@@ -7,8 +8,11 @@ namespace OrderServiceClient.UI.Forms
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        private readonly IMessageBrokerService _messageBrokerService;
+        
+        public MainWindow(IMessageBrokerService messageBrokerService)
         {
+            _messageBrokerService = messageBrokerService;
             InitializeComponent();
         }
     }

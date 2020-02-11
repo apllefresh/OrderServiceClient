@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Windows.Threading;
 using OrderServiceClient.UI.Models;
 
 namespace OrderServiceClient.UI.Hub
@@ -11,11 +12,13 @@ namespace OrderServiceClient.UI.Hub
     {
 
         public ObservableCollection<RouteToProcess> Routes { get; set; }
+        private Dispatcher _dispatcher = Dispatcher.CurrentDispatcher;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
         public RouteViewModel()
         {
+            Routes = new ObservableCollection<RouteToProcess>();
             foreach (var routeToProcess in GetData())
             {
                 Routes.Add(routeToProcess);
@@ -40,11 +43,11 @@ namespace OrderServiceClient.UI.Hub
             };
         }
         
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        public virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             foreach (var routeToProcess in GetData())
             {
-                Routes.Add(routeToProcess);
+                _dispatcher.Invoke(()=> Routes.Add(routeToProcess));
             }
         }
     }

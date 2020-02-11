@@ -7,7 +7,22 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TextBlock HorizontalAlignment="Left" Margin="181,259,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Height="81" Width="173"/>
-        <TextBox HorizontalAlignment="Left" Margin="415,300,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="202" Height="101"  Background="Aqua"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="0.8*" />
+        </Grid.ColumnDefinitions>
+
+        <ListBox Grid.Column="0" ItemsSource="{Binding Routes}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Margin="5">
+                        <TextBlock FontSize="18" Text="{Binding Path=Id}" />
+                        <!--<TextBlock Text="{Binding Path=Company}" />
+                        <TextBlock Text="{Binding Path=Price}" />-->
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        
     </Grid>
 </Window>

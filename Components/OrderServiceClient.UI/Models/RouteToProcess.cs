@@ -4,14 +4,18 @@ using System.Runtime.CompilerServices;
 
 namespace OrderServiceClient.UI.Models
 {
-    public class RouteToProcess: INotifyPropertyChanged
+    public class RouteToProcess : INotifyPropertyChanged
     {
+        private int _id;
+        private string _priority;
+        private int _num;
+        
         public int Id
         {
-            get => Id;
+            get => _id;
             set
             {
-                Id = value;
+                _id = value;
                 OnPropertyChanged("Id");
             }
         }

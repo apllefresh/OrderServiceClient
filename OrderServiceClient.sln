@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderServiceClient.MessageB
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderServiceClient.MessageBroker.RabbitMq", "MessageBroker\OrderServiceClient.MessageBroker.RabbitMq\OrderServiceClient.MessageBroker.RabbitMq.csproj", "{2DBE4050-37B8-45B6-8836-74D84D44B130}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientApi", "Client\ClientApi\ClientApi.csproj", "{2226FF97-C50D-4D9C-8E7D-237BD70FAC78}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,10 @@ Global
 		{2DBE4050-37B8-45B6-8836-74D84D44B130}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2DBE4050-37B8-45B6-8836-74D84D44B130}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2DBE4050-37B8-45B6-8836-74D84D44B130}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2226FF97-C50D-4D9C-8E7D-237BD70FAC78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2226FF97-C50D-4D9C-8E7D-237BD70FAC78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2226FF97-C50D-4D9C-8E7D-237BD70FAC78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2226FF97-C50D-4D9C-8E7D-237BD70FAC78}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,6 +56,7 @@ Global
 		{D43A8000-D80E-4FEF-9D05-F5A1B9EC75C9} = {CFAB8A07-D376-45BE-97E2-14FB6F4CCCB9}
 		{995E17D1-9C66-41F9-855B-9276268A96DC} = {CFAB8A07-D376-45BE-97E2-14FB6F4CCCB9}
 		{2DBE4050-37B8-45B6-8836-74D84D44B130} = {CFAB8A07-D376-45BE-97E2-14FB6F4CCCB9}
+		{2226FF97-C50D-4D9C-8E7D-237BD70FAC78} = {94206241-874F-4EEB-BA06-8C00080DF269}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FF68013E-C478-410B-9700-CCF8681B0A2B}

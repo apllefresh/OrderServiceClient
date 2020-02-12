@@ -1,54 +1,66 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 using System.Windows.Threading;
+using ClientApi;
 using OrderServiceClient.UI.Models;
 
 namespace OrderServiceClient.UI.Hub
 {
     public class RouteViewModel : INotifyPropertyChanged
     {
-
+        private readonly OrderServiceApiClient _client;
         public ObservableCollection<RouteToProcess> Routes { get; set; }
         private Dispatcher _dispatcher = Dispatcher.CurrentDispatcher;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public RouteViewModel()
+        public RouteViewModel(OrderServiceApiClient client)
         {
+            _client = client;
             Routes = new ObservableCollection<RouteToProcess>();
-            foreach (var routeToProcess in GetData())
-            {
-                Routes.Add(routeToProcess);
-            }
+            GetData();
         }
 
-        private IReadOnlyCollection<RouteToProcess> GetData()
+        private void GetData()
         {
-            return new[]
+            _dispatcher.Invoke(() =>
             {
-                new RouteToProcess()
+
+                var result = Task.Run(async () =>
+                        await _client.GetRoutesToProcess(1, 200)
+                            .ConfigureAwait(false))
+                    .ConfigureAwait(false)
+                    .GetAwaiter()
+                    .GetResult();
+
+                var data = result.Select(r => new RouteToProcess
                 {
-                    Id = 1,
-                    Date = DateTime.Now,
-                    Num = 1,
-                    Priority = 1,
-                    Quantity = 1,
-                    Seats = 1,
-                    ExternalId = 1,
-                    OrdersCount = 1
-                }
-            };
+                    Id = r.Id,
+                    ExternalId = r.ExternalId,
+                    Date = r.Date,
+                    Num = r.Num,
+                    Priority = r.Priority,
+                    Quantity = r.Quantity,
+                    Seats = r.Seats,
+                    OrdersCount = r.OrdersCount
+                }).ToList();
+
+
+               
+                    var t = Routes.ToList<RouteToProcess>();
+                    data.AddRange(t);
+                
+                Routes = new ObservableCollection<RouteToProcess>(data);
+            });
         }
-        
+
         public virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            foreach (var routeToProcess in GetData())
-            {
-                _dispatcher.Invoke(()=> Routes.Add(routeToProcess));
-            }
+            //_dispatcher.Invoke(() => GetData());
+            GetData();
         }
     }
 }

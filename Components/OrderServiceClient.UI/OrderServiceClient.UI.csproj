@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Client\ClientApi\ClientApi.csproj" />
     <ProjectReference Include="..\..\MessageBroker\OrderServiceClient.MessageBroker.DI\OrderServiceClient.MessageBroker.DI.csproj" />
   </ItemGroup>
 

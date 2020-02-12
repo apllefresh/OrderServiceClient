@@ -17,8 +17,7 @@
                 <DataTemplate>
                     <StackPanel Margin="5">
                         <TextBlock FontSize="18" Text="{Binding Path=Id}" />
-                        <!--<TextBlock Text="{Binding Path=Company}" />
-                        <TextBlock Text="{Binding Path=Price}" />-->
+                        <TextBlock FontSize="18" Text="binfindf" />
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>

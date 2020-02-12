@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -38,7 +39,7 @@ namespace OrderServiceClient.UI.Hub
 
                 var data = result.Select(r => new RouteToProcess
                 {
-                    Id = r.Id,
+                    Id = Routes.Count,
                     ExternalId = r.ExternalId,
                     Date = r.Date,
                     Num = r.Num,
@@ -47,20 +48,19 @@ namespace OrderServiceClient.UI.Hub
                     Seats = r.Seats,
                     OrdersCount = r.OrdersCount
                 }).ToList();
+                var t = Routes.ToList();
+                data.AddRange(t);
 
-
-               
-                    var t = Routes.ToList<RouteToProcess>();
-                    data.AddRange(t);
-                
                 Routes = new ObservableCollection<RouteToProcess>(data);
-            });
+        });
         }
 
         public virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            //_dispatcher.Invoke(() => GetData());
+            if (PropertyChanged != null)
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             GetData();
+            
         }
     }
 }

@@ -13,7 +13,7 @@ namespace OrderServiceClient.UI.Hub
     public class RouteViewModel : INotifyPropertyChanged
     {
         private readonly OrderServiceApiClient _client;
-        public ObservableCollection<RouteToProcess> Routes { get; set; }
+        public ObservableCollection<Route> Routes { get; set; }
         private Dispatcher _dispatcher = Dispatcher.CurrentDispatcher;
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -21,7 +21,7 @@ namespace OrderServiceClient.UI.Hub
         public RouteViewModel(OrderServiceApiClient client)
         {
             _client = client;
-            Routes = new ObservableCollection<RouteToProcess>();
+            Routes = new ObservableCollection<Route>();
             GetData();
         }
 
@@ -37,7 +37,7 @@ namespace OrderServiceClient.UI.Hub
                     .GetAwaiter()
                     .GetResult();
 
-                var data = result.Select(r => new RouteToProcess
+                var data = result.Select(r => new Route
                 {
                     Id = Routes.Count,
                     ExternalId = r.ExternalId,
@@ -46,12 +46,12 @@ namespace OrderServiceClient.UI.Hub
                     Priority = r.Priority,
                     Quantity = r.Quantity,
                     Seats = r.Seats,
-                    OrdersCount = r.OrdersCount
+                    OrdersCount = r.Orders.Count
                 }).ToList();
                 var t = Routes.ToList();
                 data.AddRange(t);
 
-                Routes = new ObservableCollection<RouteToProcess>(data);
+                Routes = new ObservableCollection<Route>(data);
         });
         }
 

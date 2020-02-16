@@ -30,7 +30,7 @@ namespace OrderServiceClient.UI.Forms
             });
             model.PropertyChanged += ((e,o) =>
             {
-                _dispatcher.Invoke(() => phonesList.Items.Refresh());
+                _dispatcher.Invoke(() => routeList.Items.Refresh());
                 });
             DataContext = model;
             

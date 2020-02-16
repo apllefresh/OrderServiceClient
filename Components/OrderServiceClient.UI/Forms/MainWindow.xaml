@@ -8,11 +8,21 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.3*" />
             <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="0.8*" />
         </Grid.ColumnDefinitions>
+            <ListBox x:Name="routeList" ItemsSource="{Binding Routes}" Grid.Column="0">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Margin="5">
+                            <TextBlock FontSize="18" Text="{Binding Path=Id}" />
+                            <TextBlock FontSize="18" Text="binfindf" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
 
-        <ListBox x:Name="phonesList" ItemsSource="{Binding Routes}">
+        <ListBox x:Name="orderList" ItemsSource="{Binding Orders}" Grid.Column="1">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Margin="5">
@@ -22,6 +32,6 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        
+
     </Grid>
 </Window>

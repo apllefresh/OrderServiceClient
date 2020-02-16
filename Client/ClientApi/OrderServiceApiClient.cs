@@ -17,7 +17,7 @@ namespace ClientApi
             _url = url;
         }
 
-        public async Task<IReadOnlyCollection<RouteToProcess>> GetRoutesToProcess(int page, int pageSize)
+        public async Task<IReadOnlyCollection<Route>> GetRoutesToProcess(int page, int pageSize)
         {
             try
             {
@@ -27,12 +27,12 @@ namespace ClientApi
                 if (response.IsSuccessStatusCode)
                 {
                     var pp = await response.Content.ReadAsStringAsync();
-                    var t = JsonConvert.DeserializeObject<List<RouteToProcess>>(pp);
+                    var t = JsonConvert.DeserializeObject<List<Route>>(pp);
 
                     return t;
                 }
 
-                return new List<RouteToProcess>();
+                return new List<Route>();
             }
             catch (Exception e)
             {

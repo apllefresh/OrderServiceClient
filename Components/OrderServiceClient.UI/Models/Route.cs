@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 
 namespace OrderServiceClient.UI.Models
 {
-    public class RouteToProcess : INotifyPropertyChanged
+    public class Route : INotifyPropertyChanged
     {
         private int _id;
         private string _priority;

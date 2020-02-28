@@ -8,30 +8,56 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.3*" />
             <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="0.3*" />
         </Grid.ColumnDefinitions>
-            <ListBox x:Name="routeList" ItemsSource="{Binding Routes}" Grid.Column="0">
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Margin="5">
-                            <TextBlock FontSize="18" Text="{Binding Path=Id}" />
-                            <TextBlock FontSize="18" Text="binfindf" />
-                        </StackPanel>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
-
-        <ListBox x:Name="orderList" ItemsSource="{Binding Orders}" Grid.Column="1">
+        <ListBox x:Name="routeList" ItemsSource="{Binding Routes}" Grid.Column="0">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Margin="5">
-                        <TextBlock FontSize="18" Text="{Binding Path=Id}" />
-                        <TextBlock FontSize="18" Text="binfindf" />
-                    </StackPanel>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="0.3*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Content="RouteId" Grid.Column="0" Grid.Row="0" />
+                        <TextBlock FontSize="18" Text="" Grid.Column="0" Grid.Row="0" />
+
+                        <Label Content="Route#" Grid.Column="0" Grid.Row="1" />
+                        <TextBlock FontSize="18" Text="bhjg hj" Grid.Column="0" Grid.Row="1" />
+
+                        <Label Content="OrdersCount" Grid.Column="0" Grid.Row="2" />
+                        <TextBlock FontSize="18" Text="" Grid.Column="0" Grid.Row="2" />
+
+                        <Label Content="SectionCount" Grid.Column="0" Grid.Row="3" />
+                        <TextBlock FontSize="18" Text="" Grid.Column="0" Grid.Row="3" />
+
+                        <Label Content="ProductsCount" Grid.Column="0" Grid.Row="4" />
+                        <TextBlock FontSize="18" Text="" Grid.Column="0" Grid.Row="4" />
+
+                        <Label Content="Route Priority" Grid.Column="1" Grid.Row="5" />
+                        <TextBlock FontSize="18" Text="" Grid.Column="1" Grid.Row="5" />
+
+                        <ItemsControl Grid.Column="0" Grid.Row="6" ItemsSource="{Binding Orders}">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <StackPanel Orientation="Horizontal" />
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                        </ItemsControl>
+                    </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+
 
     </Grid>
 </Window>

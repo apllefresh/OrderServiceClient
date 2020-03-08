@@ -5,21 +5,21 @@ VisualStudioVersion = 16.0.29609.76
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{94206241-874F-4EEB-BA06-8C00080DF269}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Components", "Components", "{AC383407-826F-4A95-BB05-5D80479D0482}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{AC383407-826F-4A95-BB05-5D80479D0482}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderServiceClient.UI", "Components\OrderServiceClient.UI\OrderServiceClient.UI.csproj", "{CE90B824-31A2-4548-B779-27A77B238339}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderServiceClient.UI", "UI\OrderServiceClient.UI\OrderServiceClient.UI.csproj", "{CE90B824-31A2-4548-B779-27A77B238339}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BusinessLogic", "BusinessLogic", "{EAA32385-96E9-4B3F-A59E-88331C08A00A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MessageBroker", "MessageBroker", "{CFAB8A07-D376-45BE-97E2-14FB6F4CCCB9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderServiceClient.MessageBroker.DI", "MessageBroker\OrderServiceClient.MessageBroker.DI\OrderServiceClient.MessageBroker.DI.csproj", "{D43A8000-D80E-4FEF-9D05-F5A1B9EC75C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderServiceClient.MessageBroker.DI", "MessageBroker\OrderServiceClient.MessageBroker.DI\OrderServiceClient.MessageBroker.DI.csproj", "{D43A8000-D80E-4FEF-9D05-F5A1B9EC75C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderServiceClient.MessageBroker.Contract", "MessageBroker\OrderServiceClient.MessageBroker.Contract\OrderServiceClient.MessageBroker.Contract.csproj", "{995E17D1-9C66-41F9-855B-9276268A96DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderServiceClient.MessageBroker.Contract", "MessageBroker\OrderServiceClient.MessageBroker.Contract\OrderServiceClient.MessageBroker.Contract.csproj", "{995E17D1-9C66-41F9-855B-9276268A96DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderServiceClient.MessageBroker.RabbitMq", "MessageBroker\OrderServiceClient.MessageBroker.RabbitMq\OrderServiceClient.MessageBroker.RabbitMq.csproj", "{2DBE4050-37B8-45B6-8836-74D84D44B130}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderServiceClient.MessageBroker.RabbitMq", "MessageBroker\OrderServiceClient.MessageBroker.RabbitMq\OrderServiceClient.MessageBroker.RabbitMq.csproj", "{2DBE4050-37B8-45B6-8836-74D84D44B130}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientApi", "Client\ClientApi\ClientApi.csproj", "{2226FF97-C50D-4D9C-8E7D-237BD70FAC78}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientApi", "Client\ClientApi\ClientApi.csproj", "{2226FF97-C50D-4D9C-8E7D-237BD70FAC78}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -3,17 +3,19 @@
     public class Product
     {
         public Product(
+            int id,
             string code,
             string name,
             int quantity,
-            int cell,
+            int cellId,
             int orderId,
             int externalId)
         {
+            Id = id;
             Code = code;
             Name = name;
             Quantity = quantity;
-            Cell = cell;
+            CellId = cellId;
             OrderId = orderId;
             ExternalId = externalId;
         }
@@ -23,7 +25,7 @@
         public string Code { get; }
         public string Name { get; }
         public int Quantity { get; }
-        public int Cell { get; }
+        public int CellId { get; }
 
         public int OrderId { get; }
     }

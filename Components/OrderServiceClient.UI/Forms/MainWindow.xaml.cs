@@ -20,20 +20,20 @@ namespace OrderServiceClient.UI.Forms
             InitializeComponent();
             _messageBrokerService = messageBrokerService;
             _client = client;
-            
+
             var model = new RouteViewModel(_client);
-             
+
             messageBrokerService.SubscribeForNewRoutes(() =>
             {
                 model.OnPropertyChanged("Routes");
-                
+
             });
-            model.PropertyChanged += ((e,o) =>
+            model.PropertyChanged += ((e, o) =>
             {
                 _dispatcher.Invoke(() => routeList.Items.Refresh());
-                });
+            });
             DataContext = model;
-            
+
         }
     }
 }

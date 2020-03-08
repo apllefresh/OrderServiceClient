@@ -39,20 +39,21 @@ namespace OrderServiceClient.UI.Hub
 
                 var data = result.Select(r => new Route
                 {
-                    Id = Routes.Count,
+                    Id = r.Id,
                     ExternalId = r.ExternalId,
                     Date = r.Date,
                     Num = r.Num,
                     Priority = r.Priority,
                     Quantity = r.Quantity,
                     Seats = r.Seats,
-                    OrdersCount = r.Orders.Count
+                    OrdersCount = r.Orders.Count,
+                    Orders = GetOrders(r.Orders)
                 }).ToList();
                 var t = Routes.ToList();
                 data.AddRange(t);
 
                 Routes = new ObservableCollection<Route>(data);
-        });
+            });
         }
 
         public virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
@@ -60,7 +61,25 @@ namespace OrderServiceClient.UI.Hub
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             GetData();
-            
         }
+
+        private List<Order> GetOrders(List<ClientApi.Models.Order> orders)
+        {
+            return orders.Select(o => new Order
+            {
+                OrderId = o.Id,
+                OrderExternalId = o.ExternalId,
+                Address = o.Address,
+                OrderCode = o.Code,
+                OrderName = o.Name,
+                OrderNum = o.Num,
+                OrderPriority = o.Priority,
+                OrderQuantity = o.Quantity,
+                OrderSeats = o.Seats
+            })
+                .OrderBy(o => o.OrderPriority)
+                .ToList();
+        }
+
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
@@ -15,6 +16,7 @@ namespace OrderServiceClient.UI.Models
         private int _num;
         private int _quantity;
         private int _seats;
+        private IReadOnlyCollection<Section> _sections;
         
 
         public int OrderId
@@ -97,6 +99,16 @@ namespace OrderServiceClient.UI.Models
             {
                 _seats = value;
                 OnPropertyChanged("OrderSeats");
+            }
+        }
+        
+        public IReadOnlyCollection<Section> Sections
+        {
+            get => _sections;
+            set
+            {
+                _sections = value;
+                OnPropertyChanged("Sections");
             }
         }
 

@@ -29,54 +29,94 @@
                             <ColumnDefinition Width="0.3*" />
                         </Grid.ColumnDefinitions>
                         <TextBlock Text="RouteId" Grid.Column="0" Grid.Row="0" />
-                        <TextBlock FontSize="18" Text="{Binding Id, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="0" />
+                        <TextBlock FontSize="18" Text="{Binding Id, UpdateSourceTrigger=PropertyChanged}"
+                                   Grid.Column="1" Grid.Row="0" />
 
                         <TextBlock Text="Route#" Grid.Column="0" Grid.Row="1" />
-                        <TextBlock FontSize="18" Text="{Binding Num, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="1" />
+                        <TextBlock FontSize="18" Text="{Binding Num, UpdateSourceTrigger=PropertyChanged}"
+                                   Grid.Column="1" Grid.Row="1" />
 
                         <TextBlock Text="OrdersCount" Grid.Column="0" Grid.Row="2" />
-                        <TextBlock FontSize="18" Text="{Binding OrdersCount, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="2" />
+                        <TextBlock FontSize="18" Text="{Binding OrdersCount, UpdateSourceTrigger=PropertyChanged}"
+                                   Grid.Column="1" Grid.Row="2" />
 
                         <TextBlock Text="SectionCount" Grid.Column="0" Grid.Row="3" />
-                        <TextBlock FontSize="18" Text="{Binding Seats, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="3" />
+                        <TextBlock FontSize="18" Text="{Binding Seats, UpdateSourceTrigger=PropertyChanged}"
+                                   Grid.Column="1" Grid.Row="3" />
 
                         <TextBlock Text="ProductsCount" Grid.Column="0" Grid.Row="4" />
-                        <TextBlock FontSize="18" Text="{Binding Quantity, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="4" />
+                        <TextBlock FontSize="18" Text="{Binding Quantity, UpdateSourceTrigger=PropertyChanged}"
+                                   Grid.Column="1" Grid.Row="4" />
 
                         <TextBlock Text="Route Priority" Grid.Column="0" Grid.Row="5" />
-                        <TextBlock FontSize="18" Text="{Binding Priority, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="5" />
+                        <TextBlock FontSize="18" Text="{Binding Priority, UpdateSourceTrigger=PropertyChanged}"
+                                   Grid.Column="1" Grid.Row="5" />
 
-                        <ListBox  Grid.Column="0" Grid.Row="6" ItemsSource="{Binding Orders}">
+                        <ListBox Grid.Column="0" Grid.Row="6" ItemsSource="{Binding Orders}">
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel>
                                         <TextBlock Text="Id" Grid.Column="0" Grid.Row="3" />
-                                        <TextBlock FontSize="18" Text="{Binding OrderId, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="3" />
+                                        <TextBlock FontSize="18"
+                                                   Text="{Binding OrderId, UpdateSourceTrigger=PropertyChanged}"
+                                                   Grid.Column="1" Grid.Row="3" />
 
                                         <TextBlock Text="ExternalId" Grid.Column="0" Grid.Row="3" />
-                                        <TextBlock FontSize="18" Text="{Binding OrderExternalId, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="3" />
+                                        <TextBlock FontSize="18"
+                                                   Text="{Binding OrderExternalId, UpdateSourceTrigger=PropertyChanged}"
+                                                   Grid.Column="1" Grid.Row="3" />
 
                                         <TextBlock Text="Code" Grid.Column="0" Grid.Row="3" />
-                                        <TextBlock FontSize="18" Text="{Binding OrderCode, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="3" />
+                                        <TextBlock FontSize="18"
+                                                   Text="{Binding OrderCode, UpdateSourceTrigger=PropertyChanged}"
+                                                   Grid.Column="1" Grid.Row="3" />
 
                                         <TextBlock Text="Name" Grid.Column="0" Grid.Row="3" />
-                                        <TextBlock FontSize="18" Text="{Binding OrderName, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="3" />
+                                        <TextBlock FontSize="18"
+                                                   Text="{Binding OrderName, UpdateSourceTrigger=PropertyChanged}"
+                                                   Grid.Column="1" Grid.Row="3" />
 
                                         <TextBlock Text="Address" Grid.Column="0" Grid.Row="3" />
-                                        <TextBlock FontSize="18" Text="{Binding Address, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="3" />
+                                        <TextBlock FontSize="18"
+                                                   Text="{Binding Address, UpdateSourceTrigger=PropertyChanged}"
+                                                   Grid.Column="1" Grid.Row="3" />
 
                                         <TextBlock Text="Priority" Grid.Column="0" Grid.Row="3" />
-                                        <TextBlock FontSize="18" Text="{Binding OrderPriority, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="3" />
+                                        <TextBlock FontSize="18"
+                                                   Text="{Binding OrderPriority, UpdateSourceTrigger=PropertyChanged}"
+                                                   Grid.Column="1" Grid.Row="3" />
 
                                         <TextBlock Text="Num" Grid.Column="0" Grid.Row="3" />
-                                        <TextBlock FontSize="18" Text="{Binding OrderNum, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="3" />
+                                        <TextBlock FontSize="18"
+                                                   Text="{Binding OrderNum, UpdateSourceTrigger=PropertyChanged}"
+                                                   Grid.Column="1" Grid.Row="3" />
 
                                         <TextBlock Text="Quantity" Grid.Column="0" Grid.Row="3" />
-                                        <TextBlock FontSize="18" Text="{Binding OrderQuantity, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="3" />
+                                        <TextBlock FontSize="18"
+                                                   Text="{Binding OrderQuantity, UpdateSourceTrigger=PropertyChanged}"
+                                                   Grid.Column="1" Grid.Row="3" />
 
                                         <TextBlock Text="Seats" Grid.Column="0" Grid.Row="3" />
-                                        <TextBlock FontSize="18" Text="{Binding OrderSeats, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="3" />
+                                        <TextBlock FontSize="18"
+                                                   Text="{Binding OrderSeats, UpdateSourceTrigger=PropertyChanged}"
+                                                   Grid.Column="1" Grid.Row="3" />
 
+                                        <ListBox Grid.Column="0" Grid.Row="6" ItemsSource="{Binding Sections}">
+                                            <ListBox.ItemTemplate>
+                                                <DataTemplate>
+                                                    <StackPanel >
+                                                        <TextBlock Text="Seats" Grid.Column="0" Grid.Row="3" />
+                                                        <TextBlock FontSize="18"
+                                                                   Text="{Binding SectionId, UpdateSourceTrigger=PropertyChanged}"
+                                                                   Grid.Column="1" Grid.Row="3" />
+                                                        <TextBlock Text="Seats" Grid.Column="0" Grid.Row="3" />
+                                                        <TextBlock FontSize="18"
+                                                                   Text="{Binding SectionName, UpdateSourceTrigger=PropertyChanged}"
+                                                                   Grid.Column="1" Grid.Row="3" />
+                                                    </StackPanel>
+                                                </DataTemplate>
+                                            </ListBox.ItemTemplate>
+                                        </ListBox>
                                     </StackPanel>
                                 </DataTemplate>
                             </ListBox.ItemTemplate>

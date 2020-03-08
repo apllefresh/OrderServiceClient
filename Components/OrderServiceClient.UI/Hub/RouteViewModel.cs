@@ -29,7 +29,6 @@ namespace OrderServiceClient.UI.Hub
         {
             _dispatcher.Invoke(() =>
             {
-
                 var result = Task.Run(async () =>
                         await _client.GetRoutesToProcess(1, 200)
                             .ConfigureAwait(false))
@@ -66,20 +65,30 @@ namespace OrderServiceClient.UI.Hub
         private List<Order> GetOrders(List<ClientApi.Models.Order> orders)
         {
             return orders.Select(o => new Order
-            {
-                OrderId = o.Id,
-                OrderExternalId = o.ExternalId,
-                Address = o.Address,
-                OrderCode = o.Code,
-                OrderName = o.Name,
-                OrderNum = o.Num,
-                OrderPriority = o.Priority,
-                OrderQuantity = o.Quantity,
-                OrderSeats = o.Seats
-            })
+                {
+                    OrderId = o.Id,
+                    OrderExternalId = o.ExternalId,
+                    Address = o.Address,
+                    OrderCode = o.Code,
+                    OrderName = o.Name,
+                    OrderNum = o.Num,
+                    OrderPriority = o.Priority,
+                    OrderQuantity = o.Quantity,
+                    OrderSeats = o.Seats,
+                    Sections = GetSections(o.Sections)
+                })
                 .OrderBy(o => o.OrderPriority)
                 .ToList();
         }
-
+        
+        private List<Section> GetSections(List<ClientApi.Models.Section> sections)
+        {
+            return sections.Select(s => new Section
+                {
+                    SectionId = s.Id,
+                    SectionName = s.Name
+                })
+                .ToList();
+        }
     }
 }

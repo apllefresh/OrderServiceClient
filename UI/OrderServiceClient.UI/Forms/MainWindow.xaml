@@ -4,6 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OrderServiceClient.UI"
+        xmlns:models="clr-namespace:OrderServiceClient.UI.Models"
+        xmlns:components="clr-namespace:OrderServiceClient.UI.Components"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
@@ -28,29 +30,19 @@
                             <ColumnDefinition Width="*" />
                             
                         </Grid.ColumnDefinitions>
-                        <TextBlock Text="RouteId" Grid.Column="0" Grid.Row="0" />
-                        <TextBlock FontSize="12" Text="{Binding Id, UpdateSourceTrigger=PropertyChanged}"
-                                   Grid.Column="1" Grid.Row="0" />
 
-                        <TextBlock Text="Route#" Grid.Column="0" Grid.Row="1" />
-                        <TextBlock FontSize="12" Text="{Binding Num, UpdateSourceTrigger=PropertyChanged}"
-                                   Grid.Column="1" Grid.Row="1" />
-
-                        <TextBlock Text="OrdersCount" Grid.Column="0" Grid.Row="2" />
-                        <TextBlock FontSize="12" Text="{Binding OrdersCount, UpdateSourceTrigger=PropertyChanged}"
-                                   Grid.Column="1" Grid.Row="2" />
-
-                        <TextBlock Text="SectionCount" Grid.Column="0" Grid.Row="3" />
-                        <TextBlock FontSize="12" Text="{Binding Seats, UpdateSourceTrigger=PropertyChanged}"
-                                   Grid.Column="1" Grid.Row="3" />
-
-                        <TextBlock Text="ProductsCount" Grid.Column="0" Grid.Row="4" />
-                        <TextBlock FontSize="12" Text="{Binding Quantity, UpdateSourceTrigger=PropertyChanged}"
-                                   Grid.Column="1" Grid.Row="4" />
-
-                        <TextBlock Text="Route Priority" Grid.Column="0" Grid.Row="5" />
-                        <TextBlock FontSize="12" Text="{Binding Priority, UpdateSourceTrigger=PropertyChanged}"
-                                   Grid.Column="1" Grid.Row="5" />
+                        <components:BindingTextBlock Grid.Row="0"
+                            Label="RouteId" Value="{Binding Id, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <components:BindingTextBlock Grid.Row="1"
+                            Label="Route#" Value="{Binding Num, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <components:BindingTextBlock Grid.Row="2"
+                            Label="OrdersCount" Value="{Binding OrdersCount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <components:BindingTextBlock Grid.Row="3"
+                            Label="SectionCount" Value="{Binding Seats, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <components:BindingTextBlock Grid.Row="4"
+                            Label="ProductsCount" Value="{Binding Quantity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <components:BindingTextBlock Grid.Row="5"
+                            Label="Route Priority" Value="{Binding Priority, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
                         <ItemsControl ItemsSource="{Binding Orders}" Margin="20" Grid.Column="0" Grid.Row="6" Grid.RowSpan="3">
                             <ItemsControl.ItemTemplate>

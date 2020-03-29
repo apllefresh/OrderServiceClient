@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="50" d:DesignWidth="200">
     <StackPanel Orientation="Horizontal"  
-                DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:BindingTextBlock}}"       >
+                DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:BindingTextBlock}}">
         <TextBlock Text="{Binding Label, StringFormat=\{0\}}" Width="auto" />
         <TextBlock FontSize="12" Text="{Binding Value, StringFormat=:  \{0\}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Width="auto"/>
     </StackPanel>

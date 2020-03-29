@@ -14,7 +14,7 @@ namespace OrderServiceClient.UI.Models
         private int _ordersCount;
         private int _quantity;
         private int _seats;
-        private IReadOnlyCollection<Order> _orders;
+        private IReadOnlyCollection<BoxingOrder> _orders;
 
         public int Id
         {
@@ -76,7 +76,7 @@ namespace OrderServiceClient.UI.Models
             }
         }
 
-        public IReadOnlyCollection<Order> Orders
+        public IReadOnlyCollection<BoxingOrder> Orders
         {
             get => _orders;
             set

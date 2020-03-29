@@ -62,32 +62,33 @@ namespace OrderServiceClient.UI.Hub
             GetData();
         }
 
-        private List<Order> GetOrders(List<ClientApi.Models.Order> orders)
+        private List<BoxingOrder> GetOrders(List<ClientApi.Models.Order> orders)
         {
             return orders.Select(o => new Order
-                {
-                    OrderId = o.Id,
-                    OrderExternalId = o.ExternalId,
-                    Address = o.Address,
-                    OrderCode = o.Code,
-                    OrderName = o.Name,
-                    OrderNum = o.Num,
-                    OrderPriority = o.Priority,
-                    OrderQuantity = o.Quantity,
-                    OrderSeats = o.Seats,
-                    Sections = GetSections(o.Sections)
-                })
+            {
+                OrderId = o.Id,
+                OrderExternalId = o.ExternalId,
+                Address = o.Address,
+                OrderCode = o.Code,
+                OrderName = o.Name,
+                OrderNum = o.Num,
+                OrderPriority = o.Priority,
+                OrderQuantity = o.Quantity,
+                OrderSeats = o.Seats,
+                Sections = GetSections(o.Sections)
+            })
                 .OrderBy(o => o.OrderPriority)
+                .Select(o => new BoxingOrder() { Order = o })
                 .ToList();
         }
-        
+
         private List<Section> GetSections(List<ClientApi.Models.Section> sections)
         {
             return sections.Select(s => new Section
-                {
-                    SectionId = s.Id,
-                    SectionName = s.Name
-                })
+            {
+                SectionId = s.Id,
+                SectionName = s.Name
+            })
                 .ToList();
         }
     }

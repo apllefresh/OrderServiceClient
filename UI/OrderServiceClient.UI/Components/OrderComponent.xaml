@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="OrderServiceClient.UI.Components.OrderComponent"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:OrderServiceClient.UI.Components"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <StackPanel DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:OrderComponent}}">
+        <local:BindingTextBlock Label="Id" Value="{Binding Path=Order.OrderId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+        <local:BindingTextBlock Label="ExternalId" Value="{Binding Path=Order.OrderExternalId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+        <local:BindingTextBlock Label="Code" Value="{Binding Path=Order.OrderCode, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+        <local:BindingTextBlock Label="Name" Value="{Binding Path=Order.OrderName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+        <local:BindingTextBlock Label="Address" Value="{Binding Path=Order.Address, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+        <local:BindingTextBlock Label="Priority" Value="{Binding Path=Order.OrderPriority, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+        <local:BindingTextBlock Label="Num" Value="{Binding Path=Order.OrderNum, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+        <local:BindingTextBlock Label="Quantity" Value="{Binding Path=Order.OrderQuantity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+        <local:BindingTextBlock Label="Seats" Value="{Binding Path=Order.OrderSeats, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+        <ListBox ItemsSource="{Binding Path=Order.Sections}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel >
+                        <local:BindingTextBlock Label="SectionId" Value="{Binding SectionId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <local:BindingTextBlock Label="SectionName" Value="{Binding SectionName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </StackPanel>
+</UserControl>

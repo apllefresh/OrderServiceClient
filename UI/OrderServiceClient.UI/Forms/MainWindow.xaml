@@ -28,7 +28,6 @@
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />
-                            
                         </Grid.ColumnDefinitions>
 
                         <components:BindingTextBlock Grid.Row="0"
@@ -44,88 +43,12 @@
                         <components:BindingTextBlock Grid.Row="5"
                             Label="Route Priority" Value="{Binding Priority, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
-                        <ItemsControl ItemsSource="{Binding Orders}" Margin="20" Grid.Column="0" Grid.Row="6" Grid.RowSpan="3">
+                        <ItemsControl ItemsSource="{Binding Orders}" Margin="20" Grid.Column="0" Grid.Row="6" Grid.RowSpan="3" Grid.ColumnSpan="2">
                             <ItemsControl.ItemTemplate>
-                                <DataTemplate>
-                                    <Grid>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="0.2*"/>
-                                            <ColumnDefinition Width="*"/>
-                                        </Grid.ColumnDefinitions>
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition/>
-                                            <RowDefinition/>
-                                            <RowDefinition/>
-                                            <RowDefinition/>
-                                            <RowDefinition/>
-                                            <RowDefinition/>
-                                            <RowDefinition/>
-                                            <RowDefinition/>
-                                            <RowDefinition/>
-                                            <RowDefinition/>
-                                        </Grid.RowDefinitions>
-                                        <TextBlock Text="Id" Grid.Row="0" Grid.Column="0"/>
-                                        <TextBlock FontSize="12"
-                                                   Text="{Binding OrderId, UpdateSourceTrigger=PropertyChanged}"
-                                                   Grid.Row="0" Grid.Column="1"/>
-
-                                        <TextBlock Text="ExternalId" Grid.Row="2" Grid.Column="0"/>
-                                        <TextBlock FontSize="12"
-                                                   Text="{Binding OrderExternalId, UpdateSourceTrigger=PropertyChanged}"
-                                                   Grid.Column="1" Grid.Row="2"/>
-
-                                        <TextBlock Text="Code" Grid.Column="0" Grid.Row="3"/>
-                                        <TextBlock FontSize="12"
-                                                   Text="{Binding OrderCode, UpdateSourceTrigger=PropertyChanged}"
-                                                   Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2"/>
-
-                                        <TextBlock Text="Name" Grid.Column="0" Grid.Row="4"/>
-                                        <TextBlock FontSize="12"
-                                                   Text="{Binding OrderName, UpdateSourceTrigger=PropertyChanged}"
-                                                   Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" />
-
-                                        <TextBlock Text="Address" Grid.Column="0" Grid.Row="5" />
-                                        <TextBlock FontSize="12"
-                                                   Text="{Binding Address, UpdateSourceTrigger=PropertyChanged}"
-                                                   Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2"/>
-
-                                        <TextBlock Text="Priority" Grid.Column="0" Grid.Row="6" />
-                                        <TextBlock FontSize="12"
-                                                   Text="{Binding OrderPriority, UpdateSourceTrigger=PropertyChanged}"
-                                                   Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="2" />
-
-                                        <TextBlock Text="Num" Grid.Column="0" Grid.Row="7" />
-                                        <TextBlock FontSize="12"
-                                                   Text="{Binding OrderNum, UpdateSourceTrigger=PropertyChanged}"
-                                                   Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="2"/>
-
-                                        <TextBlock Text="Quantity" Grid.Column="0" Grid.Row="8" />
-                                        <TextBlock FontSize="12"
-                                                   Text="{Binding OrderQuantity, UpdateSourceTrigger=PropertyChanged}"
-                                                   Grid.Column="1" Grid.Row="8" Grid.ColumnSpan="2"/>
-
-                                        <TextBlock Text="Seats" Grid.Column="0" Grid.Row="9" />
-                                        <TextBlock FontSize="12"
-                                                   Text="{Binding OrderSeats, UpdateSourceTrigger=PropertyChanged}"
-                                                   Grid.Column="1" Grid.Row="9" Grid.ColumnSpan="2"/>
-
-                                        <ListBox Grid.Column="0" Grid.Row="10" Grid.ColumnSpan="2" ItemsSource="{Binding Sections}">
-                                            <ListBox.ItemTemplate>
-                                                <DataTemplate>
-                                                    <StackPanel >
-                                                        <TextBlock Text="Seats" />
-                                                        <TextBlock FontSize="12"
-                                                                   Text="{Binding SectionId, UpdateSourceTrigger=PropertyChanged}"
-                                                                   />
-                                                        <TextBlock Text="Seats" />
-                                                        <TextBlock FontSize="12"
-                                                                   Text="{Binding SectionName, UpdateSourceTrigger=PropertyChanged}"
-                                                                   />
-                                                    </StackPanel>
-                                                </DataTemplate>
-                                            </ListBox.ItemTemplate>
-                                        </ListBox>
-                                    </Grid>
+                                <DataTemplate DataType="{x:Type models:BoxingOrder}">
+                                    <ListBox>
+                                        <components:OrderComponent Grid.Row="0" Order="{Binding Order}"/>
+                                    </ListBox>
                                 </DataTemplate>
                          
                             </ItemsControl.ItemTemplate>
